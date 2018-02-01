@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2021 Project Blaze
 
@@ -33,4 +34,7 @@
     <string name="platform_revision">Platform</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">Total RAM</string>
+
+    <!-- Notification log -->
+    <string name="notification_log_summary">Show notifications history log</string>
 </resources>
