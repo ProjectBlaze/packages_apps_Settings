@@ -21,7 +21,7 @@
 
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
-    
+
     <!-- Blaze version preference -->
     <string name="blaze_version">Blaze Version</string>
 
@@ -40,7 +40,7 @@
     <string name="blaze_battery_type_title">Battery</string>
     <string name="blaze_screen_title">Screen</string>
     <string name="net_info">Network</string>
-    <string name="mod_info">@string/model_info</string> 
+    <string name="mod_info">@string/model_info</string>
     <string name="id_info">Identifiers</string>
     <string name="model_summary">Model, phone number, IMEI, etc</string>
     <string name="model_name">Device status</string>
