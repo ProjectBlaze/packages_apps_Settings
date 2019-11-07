@@ -67,6 +67,7 @@ public class GesturesSettingPreferenceController extends BasePreferenceControlle
                 new AmbientDisplayConfiguration(context);
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
 
+        controllers.add(new SwipeToScreenshotPreferenceController(context, FAKE_PREF_KEY));
         controllers.add(new AssistGestureSettingsPreferenceController(context, FAKE_PREF_KEY)
                 .setAssistOnly(false));
         controllers.add(new SwipeToNotificationPreferenceController(context, FAKE_PREF_KEY));
