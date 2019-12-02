@@ -23,6 +23,7 @@
     <string name="device_info_protected_single_press">Tap to show info</string>
 
     <!-- About phone screen, Project Blaze version -->
+    <string name="about_device_name">Device</string>
     <string name="blaze_version">Blaze version</string>
     <string name="blaze_version_default">Unknown</string>
     <string name="keywords_blaze_version">ProjectBlaze version, blaze version</string>
