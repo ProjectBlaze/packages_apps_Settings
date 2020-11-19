@@ -325,4 +325,9 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+
+    <!-- Fp wake unlock options -->
+    <string name="fp_wake_unlock_title">Fingerprint behaviour</string>
+    <string name="fp_wake_unlock_touch">Touch</string>
+    <string name="fp_wake_unlock_press">Press</string>
 </resources>
