@@ -49,4 +49,6 @@
     <!-- Battery temperature -->
     <string name="battery_temp">Battery temperature</string>
 
+    <!-- Refresh rate -->
+    <string name="refresh_rate_title">Screen refresh rate</string>
 </resources>
