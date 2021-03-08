@@ -46,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="start|center"
-        android:textAppearance="@*android:style/TextAppearance.DeviceDefault.Body2"
+	android:textAppearance="@style/TextAppearance.CategoryTitle"
         android:hyphenationFrequency="normalFast"
-        android:textColor="?android:attr/colorAccent"/>
+        android:textColor="?android:attr/textColorSecondary"/>
 
     <ProgressBar
         android:id="@+id/scanning_progress"
