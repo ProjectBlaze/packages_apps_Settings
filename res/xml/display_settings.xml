@@ -179,6 +179,13 @@
             android:key="tap_to_wake"
             android:title="@string/tap_to_wake"
             android:summary="@string/tap_to_wake_summary"/>
+        
+        <com.blaze.house.preferences.SystemSettingSwitchPreference
+            android:key="high_touch_polling_rate_enable"
+            android:title="@string/high_touch_polling_rate_title"
+            android:summary="@string/high_touch_polling_rate_summary"
+            android:defaultValue="false"
+            settings:controller="com.android.settings.custom.touch.HighTouchPollingRateSettingsPreferenceController" />
 
         <com.blaze.house.preferences.SystemSettingSwitchPreference
             android:key="high_touch_sensitivity_enable"
