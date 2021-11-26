@@ -53,4 +53,8 @@
     <string name="legal_summary">Licenses and legal</string>
 
     <string name="usercard_summary">Current active user, tap for more information</string>
+
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always on when charging</string>
+    <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 </resources>
