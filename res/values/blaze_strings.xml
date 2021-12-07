@@ -228,4 +228,9 @@
     <!-- Black theme -->
     <string name="system_black_theme_title">Use black theme</string>
     <string name="system_black_theme_summary">Force black background colors</string>
+
+    <!-- Fullscreen gestures -->
+    <string name="navbar_category">Navigation bar</string>
+    <string name="fullscreen_gestures_title">Fullscreen gestures</string>
+    <string name="fullscreen_gestures_summary">Hide navbar pill and keyboard space</string>
 </resources>
