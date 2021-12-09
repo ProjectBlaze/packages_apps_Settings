@@ -67,4 +67,7 @@
     <string name="legal_summary">Licenses and legal</string>
 
     <string name="usercard_summary">Current active user, tap for more information</string>
+
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>
