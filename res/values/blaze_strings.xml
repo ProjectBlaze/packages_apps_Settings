@@ -194,4 +194,10 @@
     <!-- Theme -->
     <string name="pitch_colors">Pitch black theme</string>
     <string name="pitch_colors_summary">Pitch black theme for Settings, SystemUI, etc</string>
+
+    <!-- Cloudflare DNS Option -->
+    <string name="private_dns_mode_cloudflare" translatable="false">Cloudflare DNS</string>
+
+    <!-- AdGuard DNS Option -->
+    <string name="private_dns_mode_adguard" translatable="false">AdGuard DNS</string>
 </resources>
