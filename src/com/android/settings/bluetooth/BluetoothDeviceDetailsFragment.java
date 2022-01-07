@@ -24,6 +24,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.net.Uri;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.provider.DeviceConfig;
 import android.text.TextUtils;
@@ -217,6 +218,9 @@ public class BluetoothDeviceDetailsFragment extends RestrictedDashboardFragment 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         MenuItem item = menu.add(0, EDIT_DEVICE_NAME_ITEM_ID, 0, R.string.bluetooth_rename_button);
         item.setIcon(com.android.internal.R.drawable.ic_mode_edit);
+        item.setIconTintList(ColorStateList.valueOf(
+            com.android.settingslib.Utils.getColorAttrDefaultColor(getContext(),
+                android.R.attr.colorControlNormal)));
         item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         super.onCreateOptionsMenu(menu, inflater);
     }
