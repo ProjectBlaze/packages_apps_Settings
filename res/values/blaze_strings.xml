@@ -190,4 +190,8 @@
     <string name="navbar_category">Navigation bar</string>
     <string name="navigation_bar_ime_space_title">IME button space</string>
     <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
+
+    <!-- Theme -->
+    <string name="pitch_colors">Pitch black theme</string>
+    <string name="pitch_colors_summary">Pitch black theme for Settings, SystemUI, etc</string>
 </resources>

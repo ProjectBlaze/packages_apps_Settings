@@ -39,15 +39,60 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.om.IOverlayManager;
+import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.UserHandle;
+
+import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class DisplaySettings extends DashboardFragment {
+public class DisplaySettings extends DashboardFragment implements OnPreferenceChangeListener {
     private static final String TAG = "DisplaySettings";
 
     public static final String KEY_PROXIMITY_ON_WAKE = "proximity_on_wake";
 
+    private SwitchPreference mPitchPreference;
+    IOverlayManager mOverlayManager;
+
     @Override
     public int getMetricsCategory() {
         return SettingsEnums.DISPLAY;
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        super.onCreatePreferences(savedInstanceState, rootKey);
+        mOverlayManager = IOverlayManager.Stub.asInterface(ServiceManager.getService("overlay"));
+        mPitchPreference = findPreference("pitch_theme");
+        try {
+            mPitchPreference.setChecked(mOverlayManager.getOverlayInfo("com.iron.pitchblacksystem", UserHandle.USER_CURRENT).isEnabled());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        mPitchPreference.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mPitchPreference) {
+            setOverlay("com.iron.pitchblacksystem", (Boolean) newValue);
+            setOverlay("com.iron.pitchblacksettings", (Boolean) newValue);
+            setOverlay("com.iron.pitchblacksystemui", (Boolean) newValue);
+            return true;
+        }
+        return false;
+    }
+
+    private void setOverlay(String overlay, boolean status) {
+       try {
+            mOverlayManager.setEnabled(overlay, status, UserHandle.USER_CURRENT);
+        } catch (RemoteException | IllegalStateException | SecurityException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
