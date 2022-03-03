@@ -29,6 +29,14 @@
         settings:enableCopying="true"
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
+    
+    <!-- Blaze Version  -->
+    <Preference
+        android:key="blaze_version"
+        android:title="@string/blaze_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.BlazeVersionPreferenceController"/>    
 
     <!-- Security patch -->
     <Preference
