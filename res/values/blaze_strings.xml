@@ -23,5 +23,8 @@
     <string name="device_info_protected_single_press">Tap to show info</string>
     
     <!-- Blaze version preference -->
-    <string name="blaze_version">"Blaze version"</string>
+    <string name="blaze_version">Blaze version</string>
+
+    <!-- Blaze Maintainer -->
+    <string name="blaze_maintainer">Device Maintainer</string>
 </resources>
