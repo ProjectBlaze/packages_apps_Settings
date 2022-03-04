@@ -195,6 +195,8 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
+import com.blaze.house.BlazeHouse;
+
 public class SettingsGateway {
 
     /**
@@ -377,7 +379,9 @@ public class SettingsGateway {
             LongBackgroundTasksDetails.class.getName(),
             RegionalPreferencesEntriesFragment.class.getName(),
             BatteryInfoFragment.class.getName(),
-            UserAspectRatioDetails.class.getName()
+            UserAspectRatioDetails.class.getName(),
+            // Project Blaze additions
+            BlazeHouse.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -424,5 +428,7 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
+             // Project Blaze additions
+            Settings.BlazeHouseSettingsActivity.class.getName(),
     };
 }
