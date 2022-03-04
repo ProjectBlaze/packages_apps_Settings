@@ -324,4 +324,8 @@ public class Settings extends SettingsActivity {
      * Activity for AppDashboard.
      */
     public static class AppDashboardActivity extends SettingsActivity {}
+    
+    // projectblaze Additions.
+    public static class BlazeHouseSettingsActivity extends SettingsActivity {}
+
 }
