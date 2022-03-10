@@ -168,7 +168,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
-import org.projectblaze.blazehouse.BlazeHouse;
+import com.blaze.house.BlazeHouse;
 
 public class SettingsGateway {
 

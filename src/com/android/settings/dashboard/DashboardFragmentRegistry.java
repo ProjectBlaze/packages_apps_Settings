@@ -47,6 +47,8 @@ import com.android.settings.security.SecuritySettings;
 import com.android.settings.system.SystemDashboardFragment;
 import com.android.settingslib.drawer.CategoryKey;
 
+import com.blaze.house.BlazeHouse;
+
 import java.util.Map;
 
 /**

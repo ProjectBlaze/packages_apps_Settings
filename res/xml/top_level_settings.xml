@@ -50,13 +50,13 @@
         settings:highlightableMenuKey="@string/menu_key_apps"/>
 
      <Preference
-        android:key="top_level_extensions"
-        android:title="@string/extensions_title"
+        android:key="top_level_blaze"
+        android:title="@string/blazehouse_title"
         android:summary="@string/build_tweaks_summary_title"
-        android:icon="@drawable/ic_settings_extensions"
+        android:icon="@drawable/ic_settings_blaze"
         android:order="-130"
-        android:fragment="org.project.blazehouse.BlazeHouse"
-        settings:controller="org.projectblaze.blazehouse.TopLevelExtensionsEntryPreferenceController" />
+        android:fragment="com.blaze.house.BlazeHouse"
+        settings:controller="com.blaze.house.TopLevelExtensionsEntryPreferenceController" />
 
    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.notification.ConfigureNotificationSettings"
