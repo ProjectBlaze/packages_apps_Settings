@@ -953,4 +953,7 @@
         <item name="android:fontFamily">google-sans-text</item>
     </style>
 
+    <style name="TextAppearance.HomepagePreferenceTitle" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:textSize">22sp</item>
+    </style>
 </resources>
