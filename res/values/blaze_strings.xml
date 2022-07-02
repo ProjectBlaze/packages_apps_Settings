@@ -248,4 +248,9 @@
     <!-- Charging vibration -->
     <string name="charging_sounds_nos_title">Charging sound</string>
     <string name="charging_vibro_title">Charging vibration</string>
+
+    <!-- One shot automatic brightness -->
+    <string name="auto_brightness_one_shot_title">One shot auto-brightness</string>
+    <string name="auto_brightness_one_shot_summary">Brightness adjustment will only occur at the moment the screen is turned on</string>
+
 </resources>
