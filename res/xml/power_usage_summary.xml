@@ -80,4 +80,10 @@
         android:title="@string/battery_footer_summary"
         android:selectable="false"
         settings:searchable="false" />
+
+    <Preference
+        android:key="high_power_apps"
+        android:title="@string/high_power_apps">
+        <intent android:action="android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS" />
+    </Preference>
 </PreferenceScreen>
