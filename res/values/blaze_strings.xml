@@ -14,7 +14,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- SELinux Status -->
-    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status">SELinux Status</string>
     <string name="selinux_status_disabled">Disabled</string>
     <string name="selinux_status_permissive">Permissive</string>
     <string name="selinux_status_enforcing">Enforcing</string>
@@ -23,7 +23,7 @@
     <string name="device_info_protected_single_press">Tap to show info</string>
     
     <!-- Blaze version preference -->
-    <string name="blaze_version">Blaze version</string>
+    <string name="blaze_version">Blaze Version</string>
 
     <!-- Blaze Maintainer -->
     <string name="blaze_maintainer">Device Maintainer</string>
@@ -33,4 +33,16 @@
     <string name="platform_revision">Platform</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">Total RAM</string>
+
+    <!-- Model and Hardware -->
+    <string name="blaze_processor_title">Processor</string>
+    <string name="blaze_storage_code_title">Storage</string>
+    <string name="blaze_battery_type_title">Battery</string>
+    <string name="blaze_screen_title">Screen</string>
+    <string name="net_info">Network</string>
+    <string name="mod_info">@string/model_info</string> 
+    <string name="id_info">Identifiers</string>
+    <string name="model_summary">Model, phone number, IMEI, etc</string>
+    <string name="model_name">Device status</string>
+    <string name="legal_summary">Licenses and legal</string>
 </resources>
