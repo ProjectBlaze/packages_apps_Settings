@@ -335,9 +335,9 @@ public class PowerUsageSummary extends PowerUsageBase implements
         mBatteryChargeCycles.setSubtitle(parseBatteryCycle(mBatChgCyc));
 
         if (BatteryInfo.batteryTemp != 0f) {
-            mBatteryTempPref.setSubTitle(BatteryInfo.batteryTemp + " \u2103");
+            mBatteryTempPref.setSummary(BatteryInfo.batteryTemp + " \u2103");
         } else {
-            mBatteryTempPref.setSubTitle(getResources().getString(R.string.status_unavailable));
+            mBatteryTempPref.setSummary(getResources().getString(R.string.status_unavailable));
         }
     }
 
