@@ -219,4 +219,6 @@
 
     <!-- Icon tint color for battery usage system icon -->
     <color name="battery_usage_system_icon_color">?android:attr/textColorPrimary</color>
+
+    <color name="card_bg">@android:color/system_neutral1_0</color>
 </resources>
