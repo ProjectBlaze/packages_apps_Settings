@@ -97,6 +97,7 @@ android_library {
         "androidx.navigation_navigation-ui-ktx",
         "kotlin-stdlib",
         "vendor.lineage.fastcharge-V1.0-java",
+	"VendorSupport-preference",
     ],
 
     libs: [
