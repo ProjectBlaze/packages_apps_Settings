@@ -209,4 +209,5 @@
 
     <!-- Background for multiple user settings page avatars -->
     <color name="user_avatar_color_bg">?androidprv:attr/colorSurface</color>
+    <color name="card_bg">@android:color/system_neutral1_0</color>
 </resources>
