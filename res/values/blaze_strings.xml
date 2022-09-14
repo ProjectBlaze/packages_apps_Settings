@@ -146,4 +146,7 @@
     <string name="current_battery_capacity">Current battery capacity</string>
     <string name="designed_battery_capacity">Designed battery capacity</string>
     <string name="battery_charge_cycles">Charge cycles completed</string>
+    
+    <!-- Summary for the accessibility preference to adjust the display size, font size, bold text, and high contrast text features. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_text_reading_options_summary">Customize display size, font &amp; text</string>
 </resources>
