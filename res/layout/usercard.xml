@@ -4,25 +4,25 @@
     android:id="@+id/entity_header"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/blaze_card"
+    android:background="@drawable/blaze_card2"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginVertical="8dp"
-    android:padding="4dp"
+    android:padding="2dp"
     android:elevation="0dp">
 
     <LinearLayout
 	android:id="@+id/entity_header_content"
         android:orientation="horizontal"
-        android:layout_margin="10dp"
+        android:layout_margin="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <ImageView
         android:contentDescription="@null"
         android:layout_gravity="center"
         android:id="@+id/entity_header_icon"
-        android:layout_width="56dp"
-        android:layout_height="56dp"/>
+        android:layout_width="88dp"
+        android:layout_height="88dp"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -37,16 +37,8 @@
                 android:ellipsize="marquee" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:textColor="?android:attr/textColorPrimary"
+		android:textColor="#000000"
 		android:singleLine="true"/>
-
-            <TextView
-                android:id="@android:id/summary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:text="@string/usercard_summary"
-                android:textSize="13sp"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
