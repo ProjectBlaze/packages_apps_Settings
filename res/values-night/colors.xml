@@ -58,7 +58,6 @@
     <!-- Icon tint color for battery usage system icon -->
     <color name="battery_usage_system_icon_color">@android:color/white</color>
 
-
     <!-- UDFPS colors -->
     <color name="udfps_enroll_icon">#7DA7F1</color>
     <color name="udfps_moving_target_fill">#475670</color>
@@ -74,5 +73,9 @@
 
     <!-- Switch bar disabled state color-->
     <color name="switch_bar_state_disabled_color">#1FE3E3E3</color>
+    
+    <!-- Settings Header -->
+    <color name="op_control_text_color_secondary">#89ffffff</color>
+    <color name="op_control_text_color_primary">#ffffffff</color>
 </resources>
 
