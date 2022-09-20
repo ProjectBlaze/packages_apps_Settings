@@ -9,7 +9,7 @@
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginTop="2dp"
-    android:layout_marginBottom="2dp">
+    android:layout_marginBottom="1dp">
     
      <LinearLayout
         android:id="@id/temp"
@@ -22,7 +22,7 @@
         
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/blazeos_lottie_animation"
-            android:layout_width="348dp"
+            android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:clickable="false"
