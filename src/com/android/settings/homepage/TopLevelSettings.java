@@ -37,6 +37,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.os.UserHandle;
 
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
@@ -69,6 +70,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private static final String SAVED_HIGHLIGHT_MIXIN = "highlight_mixin";
     private static final String PREF_KEY_SUPPORT = "top_level_support";
     private static final String KEY_USER_CARD = "top_level_usercard";
+    private int mDashBoardStyle;
 
     private boolean mIsEmbeddingActivityEnabled;
     private TopLevelHighlightMixin mHighlightMixin;
@@ -85,7 +87,14 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.top_level_settings;
+        switch (mDashBoardStyle) {
+           case 0:
+               return R.xml.top_level_settings;
+           case 1:
+               return R.xml.top_level_settings_newui;
+           default:
+               return R.xml.top_level_settings;
+        }
     }
 
     @Override
@@ -103,6 +112,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         super.onAttach(context);
         HighlightableMenu.fromXml(context, getPreferenceScreenResId());
         use(SupportPreferenceController.class).setActivity(getActivity());
+        setDashboardStyle(context);
     }
 
     @Override
@@ -207,7 +217,6 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         });
     }
 
-
     private void onSetPrefCard() {
 	final PreferenceScreen screen = getPreferenceScreen();
         final int count = screen.getPreferenceCount();
@@ -224,9 +233,6 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 	    }
             if (key.equals("top_level_connected_devices")){
                 preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("top_level_accounts")){
-                preference.setLayoutResource(R.layout.top_level_preference_top);
             }
             if (key.equals("top_level_blaze")){
                 preference.setLayoutResource(R.layout.top_level_preference_middle);
@@ -272,7 +278,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             }
             if (key.equals("top_level_about_device")){
                 preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
+            } 
+            if (mDashBoardStyle == 0) {          
             if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
                 preference.setLayoutResource(R.layout.top_level_preference_middle);
             }
@@ -288,6 +295,30 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             if (key.equals("top_level_wellbeing")){
                 preference.setLayoutResource(R.layout.top_level_preference_middle);
             }
+            if (key.equals("top_level_accounts")){
+                preference.setLayoutResource(R.layout.top_level_preference_top);
+            }
+            } else if (mDashBoardStyle == 1) {
+            if (key.equals("top_level_accounts")){
+                preference.setLayoutResource(R.layout.top_level_preference_top);
+            }
+            }           
+            if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
+                preference.setLayoutResource(R.layout.top_level_preference_middle);
+            }
+            if (key.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")){
+                preference.setLayoutResource(R.layout.top_level_preference_bottom);
+            }
+            if (key.equals("top_level_google")){
+                preference.setLayoutResource(R.layout.top_level_preference_bottom);
+            }
+            if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.home.TopLevelSettingsActivity")){
+                preference.setLayoutResource(R.layout.top_level_preference_middle);
+            }
+            if (key.equals("top_level_wellbeing")){
+                preference.setLayoutResource(R.layout.top_level_preference_middle);
+            }
+            
 	}
     }
     @Override
@@ -491,4 +522,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                     return false;
                 }
             };
+            private void setDashboardStyle(Context context) {
+        mDashBoardStyle = Settings.System.getIntForUser(context.getContentResolver(),
+                    Settings.System.SETTINGS_DASHBOARD_STYLE, 0, UserHandle.USER_CURRENT);
+    }
 }
