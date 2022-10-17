@@ -224,4 +224,8 @@
     <!-- Advanced keyboard settings -->
     <string name="keyboard_extras_title">Extras</string>
     <string name="advanced_keyboard_settings_title">Advanced settings</string>
+
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Use black theme</string>
+    <string name="system_black_theme_summary">Force black background colors</string>
 </resources>
