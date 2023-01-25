@@ -13,6 +13,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="custom_version">About phone</string>
+
     <!-- SELinux Status -->
     <string name="selinux_status">SELinux Status</string>
     <string name="selinux_status_disabled">Disabled</string>
@@ -23,10 +25,10 @@
     <string name="device_info_protected_single_press">Tap to show info</string>
 
     <!-- Blaze version preference -->
-    <string name="blaze_version">Blaze Version</string>
+    <string name="blaze_version">Blaze version</string>
 
     <!-- Blaze Maintainer -->
-    <string name="blaze_maintainer">Device Maintainer</string>
+    <string name="blaze_maintainer">Device maintainer</string>
 
     <!-- Hardware info -->
     <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
