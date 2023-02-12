@@ -36,6 +36,6 @@
     <string name="blaze_maintainer">Device Maintainer</string>
 
     <!-- Hardware info -->
-    <string name="platform_revision">Platform</string>
+    <string name="soc_model">SoC Model</string>
     <string name="total_ram">Total RAM</string>
 </resources>
