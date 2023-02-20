@@ -175,4 +175,11 @@
     <!-- Refresh rate -->
     <string name="min_refresh_rate_title">Minimum refresh rate</string>
     <string name="max_refresh_rate_title">Maximum refresh rate</string>
+
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Always on display schedule</string>
+    <string name="always_on_display_schedule_sunset">Sunset</string>
+    <string name="always_on_display_schedule_sunrise">Sunrise</string>
+    <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
 </resources>
