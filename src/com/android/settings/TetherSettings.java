@@ -325,7 +325,7 @@ public class TetherSettings extends RestrictedSettingsFragment
 
 
         mStartTetheringCallback = new OnStartTetheringCallback(this);
-        mTetheringEventCallback = new TetheringEventCallback();
+        mTetheringEventCallback = new TetheringEventCallback(this);
         mTm.registerTetheringEventCallback(r -> mHandler.post(r), mTetheringEventCallback);
 
         mMassStorageActive = Environment.MEDIA_SHARED.equals(Environment.getExternalStorageState());
@@ -644,13 +644,22 @@ public class TetherSettings extends RestrictedSettingsFragment
         }
     }
 
-    private final class TetheringEventCallback implements TetheringManager.TetheringEventCallback {
+    private static final class TetheringEventCallback implements TetheringManager.TetheringEventCallback {
+        //mfvui memory leak
+        final WeakReference<TetherSettings> mTetherSettings;
+        public TetheringEventCallback(TetherSettings settings) {
+            mTetherSettings = new WeakReference<>(settings);
+        }
+
         @Override
         public void onTetheredInterfacesChanged(List<String> interfaces) {
             Log.d(TAG, "onTetheredInterfacesChanged() interfaces : " + interfaces.toString());
             String[] tethered = interfaces.toArray(new String[interfaces.size()]);
-            updateUsbState(tethered);
-            updateBluetoothAndEthernetState(tethered);
+            TetherSettings settings = mTetherSettings.get();
+            if (settings != null){
+                settings.updateUsbState(tethered);
+                settings.updateBluetoothAndEthernetState(tethered);
+            }
         }
     }
 
