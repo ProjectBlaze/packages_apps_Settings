@@ -50,7 +50,7 @@ public class BlazeInfoPreferenceController extends AbstractPreferenceController 
         final TextView battery = (TextView) blazeInfoPreference.findViewById(R.id.battery_type_message);
         final TextView infoScreen = (TextView) blazeInfoPreference.findViewById(R.id.screen_message);
         processor.setText(BlazeSpecUtils.getProcessorModel());
-        storage.setText(String.valueOf(BlazeSpecUtils.getTotalInternalMemorySize()) + "GB ROM + " + String.valueOf(BlazeSpecUtils.getTotalRAM()) + "GB RAM");
+        storage.setText(String.valueOf(BlazeSpecUtils.getTotalInternalMemorySize()) + "GB ROM + " + BlazeSpecUtils.getTotalRAM() + " RAM");
         battery.setText(BlazeSpecUtils.getBatteryCapacity(mContext) + " mAh");
         infoScreen.setText(BlazeSpecUtils.getScreenRes(mContext));
     }
