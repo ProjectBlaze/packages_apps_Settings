@@ -25,6 +25,7 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.UserInfo;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -78,6 +79,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private boolean mScrollNeeded = true;
     private boolean mFirstStarted = true;
     private ActivityEmbeddingController mActivityEmbeddingController;
+    private boolean gAppsExists;
 
     public TopLevelSettings() {
         final Bundle args = new Bundle();
@@ -111,6 +113,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        // Check if Google Apps exist and set the gAppsExists flag accordingly
+        gAppsExists = checkIfGoogleAppsExist(context);
         HighlightableMenu.fromXml(context, getPreferenceScreenResId());
         use(SupportPreferenceController.class).setActivity(getActivity());
     }
@@ -209,6 +213,18 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         return taskInfo.numActivities == 1;
     }
 
+    private boolean checkIfGoogleAppsExist(Context context) {
+        // Perform the necessary check to determine if Google Apps exist
+        // For example, you might use PackageManager to check for the existence of a Google app package
+        PackageManager packageManager = context.getPackageManager();
+        try {
+            packageManager.getPackageInfo("com.google.android.gsf", 0);
+            return true; // Google Apps exist
+        } catch (PackageManager.NameNotFoundException e) {
+            return false; // Google Apps do not exist
+        }
+    }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -226,93 +242,45 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             if (icon != null) {
                 icon.setTint(tintColor);
             }
-        onSetPrefCard();
         });
+        onSetPrefCard();
     }
 
-
     private void onSetPrefCard() {
-	final PreferenceScreen screen = getPreferenceScreen();
+        final PreferenceScreen screen = getPreferenceScreen();
         final int count = screen.getPreferenceCount();
         for (int i = 0; i < count; i++) {
             final Preference preference = screen.getPreference(i);
 
- 	    String key = preference.getKey();
-
-            if (key.equals("top_level_usercard")){
+            String key = preference.getKey();
+            if (key.equals("top_level_network")
+            	|| key.equals("top_level_blaze")
+                || key.equals("top_level_sound")
+                || key.equals("top_level_apps")
+            	|| key.equals("top_level_emergency")
+                || key.equals("top_level_system")){
+                preference.setLayoutResource(R.layout.top_level_preference_top);
+            } else if (key.equals("top_level_battery")
+            	|| key.equals("top_level_display")
+                || key.equals("top_level_accessibility")
+            	|| key.equals("top_level_security")
+            	|| key.equals("top_level_privacy")
+            	|| key.equals("top_level_safety_center")
+            	|| key.equals("top_level_wellbeing")
+            	|| key.equals("top_level_notifications")){
+                preference.setLayoutResource(R.layout.top_level_preference_middle);
+            } else if ("top_level_google".equals(key)){
+                preference.setLayoutResource(R.layout.top_level_preference_bottom);
+            } else if (key.equals("top_level_accounts") && gAppsExists){
+                preference.setLayoutResource(R.layout.top_level_preference_middle);
+            }  else if (key.equals("top_level_usercard")){
                 preference.setLayoutResource(R.layout.usercard);
-            }
-	    if (key.equals("top_level_network")){
-	        preference.setLayoutResource(R.layout.top_level_preference_top);
-	    }
-            if (key.equals("top_level_connected_devices")){
+            } else {
                 preference.setLayoutResource(R.layout.top_level_preference_bottom);
             }
-            if (key.equals("top_level_accounts")){
-                preference.setLayoutResource(R.layout.top_level_preference_top);
-            }
-            if (key.equals("top_level_blaze")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_wallpaper")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_battery")){
-                preference.setLayoutResource(R.layout.top_level_preference_top);
-            }
-            if (key.equals("top_level_display")){
-                preference.setLayoutResource(R.layout.top_level_preference_top);
-            }
-            if (key.equals("top_level_sound")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_apps")){
-                preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("top_level_storage")){
-                preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("top_level_notifications")){
-                preference.setLayoutResource(R.layout.top_level_preference_top);
-            }
-            if (key.equals("top_level_location")){
-                preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("top_level_accessibility")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_security")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_privacy")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_emergency")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_system")){
-                preference.setLayoutResource(R.layout.top_level_preference_top);
-            }
-            if (key.equals("top_level_about_device")){
-                preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")){
-                preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("top_level_google")){
-                preference.setLayoutResource(R.layout.top_level_preference_bottom);
-            }
-            if (key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.home.TopLevelSettingsActivity")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-            if (key.equals("top_level_wellbeing")){
-                preference.setLayoutResource(R.layout.top_level_preference_middle);
-            }
-	}
+       }
     }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
